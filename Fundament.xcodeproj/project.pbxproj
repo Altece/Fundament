@@ -7,30 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA0F0EBD1F17FD96007A3041 /* OpticsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F0EBB1F17FCF9007A3041 /* OpticsClient.swift */; };
-		AA291E7E1F1BD3270025A23C /* Getter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291E7C1F1BD2770025A23C /* Getter.swift */; };
-		AA291E7F1F1BD3270025A23C /* Isomorph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291E781F1BD2770025A23C /* Isomorph.swift */; };
-		AA291E801F1BD3270025A23C /* Maker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291E7A1F1BD2770025A23C /* Maker.swift */; };
-		AA291E811F1BD3270025A23C /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291E791F1BD2770025A23C /* Mapper.swift */; };
-		AA291E821F1BD3270025A23C /* Prism.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291E7D1F1BD2770025A23C /* Prism.swift */; };
-		AA291E831F1BD3270025A23C /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291E771F1BD2760025A23C /* Reducer.swift */; };
-		AA291E841F1BD3270025A23C /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291E761F1BD2760025A23C /* Setter.swift */; };
-		AA291E851F1BD3270025A23C /* Traversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291E7B1F1BD2770025A23C /* Traversal.swift */; };
-		AA291E861F1BD5C20025A23C /* Lens.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291E741F1BCC410025A23C /* Lens.swift */; };
-		AA291EA61F1BFA980025A23C /* Gettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291E9E1F1BFA860025A23C /* Gettable.swift */; };
-		AA291EA71F1BFA980025A23C /* Lensable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291E9F1F1BFA860025A23C /* Lensable.swift */; };
-		AA291EA81F1BFA980025A23C /* Resetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EA01F1BFA860025A23C /* Resetable.swift */; };
-		AA291EA91F1BFA980025A23C /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EA11F1BFA860025A23C /* Mappable.swift */; };
-		AA291EAA1F1BFA980025A23C /* Prismable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EA21F1BFA860025A23C /* Prismable.swift */; };
-		AA291EAB1F1BFA980025A23C /* Reduceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EA31F1BFA860025A23C /* Reduceable.swift */; };
-		AA291EAC1F1BFA980025A23C /* Settable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EA41F1BFA860025A23C /* Settable.swift */; };
-		AA291EAD1F1BFA980025A23C /* Traversable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EA51F1BFA860025A23C /* Traversable.swift */; };
-		AA291EAF1F1BFE770025A23C /* Isomorphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EAE1F1BFE650025A23C /* Isomorphic.swift */; };
+		AA291EC91F1C0CE50025A23C /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EC61F1C0CD70025A23C /* Either.swift */; };
+		AA291ECA1F1C0CE50025A23C /* KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EC71F1C0CD70025A23C /* KeyPath.swift */; };
+		AA291ECB1F1C0CE50025A23C /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EC81F1C0CD70025A23C /* Optional.swift */; };
+		AA291ECC1F1C0CE50025A23C /* Gettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EB21F1C0CD70025A23C /* Gettable.swift */; };
+		AA291ECD1F1C0CE50025A23C /* Isomorphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EB31F1C0CD70025A23C /* Isomorphic.swift */; };
+		AA291ECE1F1C0CE50025A23C /* Lensable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EB41F1C0CD70025A23C /* Lensable.swift */; };
+		AA291ECF1F1C0CE50025A23C /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EB51F1C0CD70025A23C /* Mappable.swift */; };
+		AA291ED01F1C0CE50025A23C /* Prismable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EB61F1C0CD70025A23C /* Prismable.swift */; };
+		AA291ED11F1C0CE50025A23C /* Reduceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EB71F1C0CD70025A23C /* Reduceable.swift */; };
+		AA291ED21F1C0CE50025A23C /* Resetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EB81F1C0CD70025A23C /* Resetable.swift */; };
+		AA291ED31F1C0CE50025A23C /* Settable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EB91F1C0CD70025A23C /* Settable.swift */; };
+		AA291ED41F1C0CE50025A23C /* Traversable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EBA1F1C0CD70025A23C /* Traversable.swift */; };
+		AA291ED51F1C0CE50025A23C /* Getter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EBC1F1C0CD70025A23C /* Getter.swift */; };
+		AA291ED61F1C0CE50025A23C /* Isomorph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EBD1F1C0CD70025A23C /* Isomorph.swift */; };
+		AA291ED71F1C0CE50025A23C /* Lens.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EBE1F1C0CD70025A23C /* Lens.swift */; };
+		AA291ED81F1C0CE50025A23C /* Maker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EBF1F1C0CD70025A23C /* Maker.swift */; };
+		AA291ED91F1C0CE50025A23C /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EC01F1C0CD70025A23C /* Mapper.swift */; };
+		AA291EDA1F1C0CE50025A23C /* Prism.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EC11F1C0CD70025A23C /* Prism.swift */; };
+		AA291EDB1F1C0CE50025A23C /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EC21F1C0CD70025A23C /* Reducer.swift */; };
+		AA291EDC1F1C0CE50025A23C /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EC31F1C0CD70025A23C /* Setter.swift */; };
+		AA291EDD1F1C0CE50025A23C /* Traversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA291EC41F1C0CD70025A23C /* Traversal.swift */; };
 		AA71C5471F17EF35007673A1 /* Fundament.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA71C53D1F17EF34007673A1 /* Fundament.framework */; };
 		AA71C54C1F17EF35007673A1 /* FundamentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA71C54B1F17EF35007673A1 /* FundamentTests.swift */; };
 		AA71C54E1F17EF35007673A1 /* Fundament.h in Headers */ = {isa = PBXBuildFile; fileRef = AA71C5401F17EF34007673A1 /* Fundament.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA71C5591F17EF5D007673A1 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA71C5581F17EF5D007673A1 /* Optional.swift */; };
-		AA71C55B1F17EFCD007673A1 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA71C55A1F17EFCD007673A1 /* Either.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,33 +44,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AA0F0EBB1F17FCF9007A3041 /* OpticsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpticsClient.swift; path = Optics/OpticsClient.swift; sourceTree = "<group>"; };
-		AA291E741F1BCC410025A23C /* Lens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Lens.swift; path = Optics/Lens.swift; sourceTree = "<group>"; };
-		AA291E761F1BD2760025A23C /* Setter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Setter.swift; path = Optics/Setter.swift; sourceTree = "<group>"; };
-		AA291E771F1BD2760025A23C /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Reducer.swift; path = Optics/Reducer.swift; sourceTree = "<group>"; };
-		AA291E781F1BD2770025A23C /* Isomorph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Isomorph.swift; path = Optics/Isomorph.swift; sourceTree = "<group>"; };
-		AA291E791F1BD2770025A23C /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Mapper.swift; path = Optics/Mapper.swift; sourceTree = "<group>"; };
-		AA291E7A1F1BD2770025A23C /* Maker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Maker.swift; path = Optics/Maker.swift; sourceTree = "<group>"; };
-		AA291E7B1F1BD2770025A23C /* Traversal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Traversal.swift; path = Optics/Traversal.swift; sourceTree = "<group>"; };
-		AA291E7C1F1BD2770025A23C /* Getter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Getter.swift; path = Optics/Getter.swift; sourceTree = "<group>"; };
-		AA291E7D1F1BD2770025A23C /* Prism.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Prism.swift; path = Optics/Prism.swift; sourceTree = "<group>"; };
-		AA291E9E1F1BFA860025A23C /* Gettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gettable.swift; sourceTree = "<group>"; };
-		AA291E9F1F1BFA860025A23C /* Lensable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lensable.swift; sourceTree = "<group>"; };
-		AA291EA01F1BFA860025A23C /* Resetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resetable.swift; sourceTree = "<group>"; };
-		AA291EA11F1BFA860025A23C /* Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
-		AA291EA21F1BFA860025A23C /* Prismable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prismable.swift; sourceTree = "<group>"; };
-		AA291EA31F1BFA860025A23C /* Reduceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reduceable.swift; sourceTree = "<group>"; };
-		AA291EA41F1BFA860025A23C /* Settable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settable.swift; sourceTree = "<group>"; };
-		AA291EA51F1BFA860025A23C /* Traversable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traversable.swift; sourceTree = "<group>"; };
-		AA291EAE1F1BFE650025A23C /* Isomorphic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Isomorphic.swift; sourceTree = "<group>"; };
+		AA291EB21F1C0CD70025A23C /* Gettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gettable.swift; sourceTree = "<group>"; };
+		AA291EB31F1C0CD70025A23C /* Isomorphic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Isomorphic.swift; sourceTree = "<group>"; };
+		AA291EB41F1C0CD70025A23C /* Lensable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lensable.swift; sourceTree = "<group>"; };
+		AA291EB51F1C0CD70025A23C /* Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
+		AA291EB61F1C0CD70025A23C /* Prismable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prismable.swift; sourceTree = "<group>"; };
+		AA291EB71F1C0CD70025A23C /* Reduceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reduceable.swift; sourceTree = "<group>"; };
+		AA291EB81F1C0CD70025A23C /* Resetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resetable.swift; sourceTree = "<group>"; };
+		AA291EB91F1C0CD70025A23C /* Settable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settable.swift; sourceTree = "<group>"; };
+		AA291EBA1F1C0CD70025A23C /* Traversable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traversable.swift; sourceTree = "<group>"; };
+		AA291EBC1F1C0CD70025A23C /* Getter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Getter.swift; sourceTree = "<group>"; };
+		AA291EBD1F1C0CD70025A23C /* Isomorph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Isomorph.swift; sourceTree = "<group>"; };
+		AA291EBE1F1C0CD70025A23C /* Lens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lens.swift; sourceTree = "<group>"; };
+		AA291EBF1F1C0CD70025A23C /* Maker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maker.swift; sourceTree = "<group>"; };
+		AA291EC01F1C0CD70025A23C /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		AA291EC11F1C0CD70025A23C /* Prism.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prism.swift; sourceTree = "<group>"; };
+		AA291EC21F1C0CD70025A23C /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		AA291EC31F1C0CD70025A23C /* Setter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setter.swift; sourceTree = "<group>"; };
+		AA291EC41F1C0CD70025A23C /* Traversal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traversal.swift; sourceTree = "<group>"; };
+		AA291EC61F1C0CD70025A23C /* Either.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
+		AA291EC71F1C0CD70025A23C /* KeyPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPath.swift; sourceTree = "<group>"; };
+		AA291EC81F1C0CD70025A23C /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		AA71C53D1F17EF34007673A1 /* Fundament.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Fundament.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA71C5401F17EF34007673A1 /* Fundament.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fundament.h; sourceTree = "<group>"; };
 		AA71C5411F17EF34007673A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA71C5461F17EF35007673A1 /* FundamentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FundamentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA71C54B1F17EF35007673A1 /* FundamentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentTests.swift; sourceTree = "<group>"; };
 		AA71C54D1F17EF35007673A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA71C5581F17EF5D007673A1 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Optional.swift; path = Foundation/Optional.swift; sourceTree = "<group>"; };
-		AA71C55A1F17EFCD007673A1 /* Either.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,20 +92,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA291E9D1F1BFA860025A23C /* OpticsClients */ = {
+		AA291EB01F1C0CD70025A23C /* Optics */ = {
 			isa = PBXGroup;
 			children = (
-				AA291E9E1F1BFA860025A23C /* Gettable.swift */,
-				AA291EAE1F1BFE650025A23C /* Isomorphic.swift */,
-				AA291E9F1F1BFA860025A23C /* Lensable.swift */,
-				AA291EA01F1BFA860025A23C /* Resetable.swift */,
-				AA291EA11F1BFA860025A23C /* Mappable.swift */,
-				AA291EA21F1BFA860025A23C /* Prismable.swift */,
-				AA291EA31F1BFA860025A23C /* Reduceable.swift */,
-				AA291EA41F1BFA860025A23C /* Settable.swift */,
-				AA291EA51F1BFA860025A23C /* Traversable.swift */,
+				AA291EB11F1C0CD70025A23C /* Clients */,
+				AA291EBB1F1C0CD70025A23C /* Types */,
 			);
-			path = OpticsClients;
+			path = Optics;
+			sourceTree = "<group>";
+		};
+		AA291EB11F1C0CD70025A23C /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				AA291EB21F1C0CD70025A23C /* Gettable.swift */,
+				AA291EB31F1C0CD70025A23C /* Isomorphic.swift */,
+				AA291EB41F1C0CD70025A23C /* Lensable.swift */,
+				AA291EB51F1C0CD70025A23C /* Mappable.swift */,
+				AA291EB61F1C0CD70025A23C /* Prismable.swift */,
+				AA291EB71F1C0CD70025A23C /* Reduceable.swift */,
+				AA291EB81F1C0CD70025A23C /* Resetable.swift */,
+				AA291EB91F1C0CD70025A23C /* Settable.swift */,
+				AA291EBA1F1C0CD70025A23C /* Traversable.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		AA291EBB1F1C0CD70025A23C /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				AA291EBC1F1C0CD70025A23C /* Getter.swift */,
+				AA291EBD1F1C0CD70025A23C /* Isomorph.swift */,
+				AA291EBE1F1C0CD70025A23C /* Lens.swift */,
+				AA291EBF1F1C0CD70025A23C /* Maker.swift */,
+				AA291EC01F1C0CD70025A23C /* Mapper.swift */,
+				AA291EC11F1C0CD70025A23C /* Prism.swift */,
+				AA291EC21F1C0CD70025A23C /* Reducer.swift */,
+				AA291EC31F1C0CD70025A23C /* Setter.swift */,
+				AA291EC41F1C0CD70025A23C /* Traversal.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		AA291EC51F1C0CD70025A23C /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				AA291EC61F1C0CD70025A23C /* Either.swift */,
+				AA291EC71F1C0CD70025A23C /* KeyPath.swift */,
+				AA291EC81F1C0CD70025A23C /* Optional.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		AA71C5331F17EF34007673A1 = {
@@ -129,9 +164,8 @@
 		AA71C53F1F17EF34007673A1 /* Fundament */ = {
 			isa = PBXGroup;
 			children = (
-				AA291E9D1F1BFA860025A23C /* OpticsClients */,
-				AA71C55C1F17F027007673A1 /* Optics */,
-				AA71C5571F17EF47007673A1 /* Foundation */,
+				AA291EC51F1C0CD70025A23C /* Foundation */,
+				AA291EB01F1C0CD70025A23C /* Optics */,
 				AA71C5401F17EF34007673A1 /* Fundament.h */,
 				AA71C5411F17EF34007673A1 /* Info.plist */,
 			);
@@ -145,32 +179,6 @@
 				AA71C54D1F17EF35007673A1 /* Info.plist */,
 			);
 			path = FundamentTests;
-			sourceTree = "<group>";
-		};
-		AA71C5571F17EF47007673A1 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				AA71C5581F17EF5D007673A1 /* Optional.swift */,
-				AA71C55A1F17EFCD007673A1 /* Either.swift */,
-			);
-			name = Foundation;
-			sourceTree = "<group>";
-		};
-		AA71C55C1F17F027007673A1 /* Optics */ = {
-			isa = PBXGroup;
-			children = (
-				AA0F0EBB1F17FCF9007A3041 /* OpticsClient.swift */,
-				AA291E7C1F1BD2770025A23C /* Getter.swift */,
-				AA291E781F1BD2770025A23C /* Isomorph.swift */,
-				AA291E741F1BCC410025A23C /* Lens.swift */,
-				AA291E7A1F1BD2770025A23C /* Maker.swift */,
-				AA291E791F1BD2770025A23C /* Mapper.swift */,
-				AA291E7D1F1BD2770025A23C /* Prism.swift */,
-				AA291E771F1BD2760025A23C /* Reducer.swift */,
-				AA291E761F1BD2760025A23C /* Setter.swift */,
-				AA291E7B1F1BD2770025A23C /* Traversal.swift */,
-			);
-			name = Optics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,27 +292,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA291E7F1F1BD3270025A23C /* Isomorph.swift in Sources */,
-				AA71C55B1F17EFCD007673A1 /* Either.swift in Sources */,
-				AA291EAC1F1BFA980025A23C /* Settable.swift in Sources */,
-				AA291EAD1F1BFA980025A23C /* Traversable.swift in Sources */,
-				AA291EAA1F1BFA980025A23C /* Prismable.swift in Sources */,
-				AA291E851F1BD3270025A23C /* Traversal.swift in Sources */,
-				AA71C5591F17EF5D007673A1 /* Optional.swift in Sources */,
-				AA291EAB1F1BFA980025A23C /* Reduceable.swift in Sources */,
-				AA291E821F1BD3270025A23C /* Prism.swift in Sources */,
-				AA0F0EBD1F17FD96007A3041 /* OpticsClient.swift in Sources */,
-				AA291EAF1F1BFE770025A23C /* Isomorphic.swift in Sources */,
-				AA291E811F1BD3270025A23C /* Mapper.swift in Sources */,
-				AA291E801F1BD3270025A23C /* Maker.swift in Sources */,
-				AA291E831F1BD3270025A23C /* Reducer.swift in Sources */,
-				AA291EA81F1BFA980025A23C /* Resetable.swift in Sources */,
-				AA291EA71F1BFA980025A23C /* Lensable.swift in Sources */,
-				AA291EA91F1BFA980025A23C /* Mappable.swift in Sources */,
-				AA291E841F1BD3270025A23C /* Setter.swift in Sources */,
-				AA291EA61F1BFA980025A23C /* Gettable.swift in Sources */,
-				AA291E7E1F1BD3270025A23C /* Getter.swift in Sources */,
-				AA291E861F1BD5C20025A23C /* Lens.swift in Sources */,
+				AA291ECA1F1C0CE50025A23C /* KeyPath.swift in Sources */,
+				AA291ED01F1C0CE50025A23C /* Prismable.swift in Sources */,
+				AA291EDC1F1C0CE50025A23C /* Setter.swift in Sources */,
+				AA291ECF1F1C0CE50025A23C /* Mappable.swift in Sources */,
+				AA291EDA1F1C0CE50025A23C /* Prism.swift in Sources */,
+				AA291EDB1F1C0CE50025A23C /* Reducer.swift in Sources */,
+				AA291ECE1F1C0CE50025A23C /* Lensable.swift in Sources */,
+				AA291ECD1F1C0CE50025A23C /* Isomorphic.swift in Sources */,
+				AA291ED11F1C0CE50025A23C /* Reduceable.swift in Sources */,
+				AA291ED81F1C0CE50025A23C /* Maker.swift in Sources */,
+				AA291ECC1F1C0CE50025A23C /* Gettable.swift in Sources */,
+				AA291EDD1F1C0CE50025A23C /* Traversal.swift in Sources */,
+				AA291ED21F1C0CE50025A23C /* Resetable.swift in Sources */,
+				AA291ED51F1C0CE50025A23C /* Getter.swift in Sources */,
+				AA291ED91F1C0CE50025A23C /* Mapper.swift in Sources */,
+				AA291EC91F1C0CE50025A23C /* Either.swift in Sources */,
+				AA291ED61F1C0CE50025A23C /* Isomorph.swift in Sources */,
+				AA291ECB1F1C0CE50025A23C /* Optional.swift in Sources */,
+				AA291ED31F1C0CE50025A23C /* Settable.swift in Sources */,
+				AA291ED41F1C0CE50025A23C /* Traversable.swift in Sources */,
+				AA291ED71F1C0CE50025A23C /* Lens.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
