@@ -30,8 +30,11 @@ public class AnyIsomorph<S, T, A, B>: IsomorphType {
         _reset = reset
     }
 
-    public convenience init<I: IsomorphType>(_ isomorph: I)
-        where Source == I.Source, Target == I.Target, SourceValue == I.SourceValue, TargetValue == I.TargetValue {
+    public convenience init<I: IsomorphType>(_ isomorph: I) where
+        Source == I.Source,
+        Target == I.Target,
+        SourceValue == I.SourceValue,
+        TargetValue == I.TargetValue {
             self.init(get: isomorph.get(from:), reset: isomorph.reset(to:))
     }
 
@@ -49,16 +52,20 @@ public class Isomorph<Whole, Part>: AnyIsomorph<Whole, Whole, Part, Part> {}
 // MARK: - Composition
 
 public func compose<PI: IsomorphType, CI: IsomorphType>(isomorph parent: PI, with child: CI)
-    -> AnyIsomorph<PI.Source, PI.Target, CI.SourceValue, CI.TargetValue>
-    where PI.SourceValue == CI.Source, PI.TargetValue == CI.Target {
+    -> AnyIsomorph<PI.Source, PI.Target, CI.SourceValue, CI.TargetValue> where
+    PI.SourceValue == CI.Source,
+    PI.TargetValue == CI.Target {
         return AnyIsomorph<PI.Source, PI.Target, CI.SourceValue, CI.TargetValue>(
             get: { source in child.get(from: parent.get(from: source)) },
             reset: { value in parent.reset(to: child.reset(to: value)) })
 }
 
 public func compose<PI: IsomorphType, CI: IsomorphType>(isomorph parent: PI, with child: CI)
-    -> Isomorph<PI.Source, CI.SourceValue>
-    where PI.SourceValue == CI.Source, PI.TargetValue == CI.Target, PI.Source == PI.Target, CI.SourceValue == CI.TargetValue {
+    -> Isomorph<PI.Source, CI.SourceValue> where
+    PI.SourceValue == CI.Source,
+    PI.TargetValue == CI.Target,
+    PI.Source == PI.Target,
+    CI.SourceValue == CI.TargetValue {
         let composed: AnyIsomorph = compose(isomorph: parent, with: child)
         return Isomorph<PI.Source, CI.SourceValue>(get: composed._get, reset: composed._reset)
 }

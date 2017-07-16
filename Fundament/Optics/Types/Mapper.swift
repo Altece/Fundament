@@ -26,8 +26,11 @@ public class AnyMapper<S, T, A, B> {
         _map = map
     }
 
-    public convenience init<M: MapperType>(_ mapper: M)
-        where Source == M.Source, Target == M.Target, SourceValue == M.SourceValue, TargetValue == M.TargetValue {
+    public convenience init<M: MapperType>(_ mapper: M) where
+        Source == M.Source,
+        Target == M.Target,
+        SourceValue == M.SourceValue,
+        TargetValue == M.TargetValue {
             self.init(mapper.map(from:over:))
     }
 

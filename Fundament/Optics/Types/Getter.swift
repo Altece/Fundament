@@ -5,7 +5,9 @@ public protocol GetterType: ReducerType {
 }
 
 extension GetterType {
-    public func reduce<T>(from source: Source, to initialValue: T, combine: (T, SourceValue) -> T) -> T {
+    public func reduce<T>(from source: Source,
+                          to initialValue: T,
+                          combine: (T, SourceValue) -> T) -> T {
         return combine(initialValue, get(from: source))
     }
 }

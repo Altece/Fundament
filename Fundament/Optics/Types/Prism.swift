@@ -9,7 +9,9 @@ extension ResetterType where Self: PrismType, Self.Source == Self.Target {
 }
 
 extension ReducerType where Self: PrismType {
-    public func reduce<T>(from source: Source, to initialValue: T, combine: (T, SourceValue) -> T) -> T {
+    public func reduce<T>(from source: Source,
+                          to initialValue: T,
+                          combine: (T, SourceValue) -> T) -> T {
         return tryGet(from: source).map { combine(initialValue, $0) } ?? initialValue
     }
 }
@@ -34,8 +36,11 @@ public class AnyPrism<S, T, A, B>: PrismType {
         _map = map
     }
 
-    public convenience init<P: PrismType>(_ prism: P)
-        where Source == P.Source, Target == P.Target, SourceValue == P.SourceValue, TargetValue == P.TargetValue {
+    public convenience init<P: PrismType>(_ prism: P) where
+        Source == P.Source,
+        Target == P.Target,
+        SourceValue == P.SourceValue,
+        TargetValue == P.TargetValue {
             self.init(tryGet: prism.tryGet(from:),
                       reset: prism.reset(to:),
                       map: prism.map(from:over:))
@@ -72,8 +77,9 @@ public class Prism<Whole, Part>: AnyPrism<Whole, Whole, Part, Part> {
 // MARK: - Composition
 
 public func compose<PP: PrismType, CP: PrismType>(prism parent: PP, with child: CP)
-    -> AnyPrism<PP.Source, PP.Target, CP.SourceValue, CP.TargetValue>
-    where PP.SourceValue == CP.Source, PP.TargetValue == CP.Target {
+    -> AnyPrism<PP.Source, PP.Target, CP.SourceValue, CP.TargetValue> where
+    PP.SourceValue == CP.Source,
+    PP.TargetValue == CP.Target {
         return AnyPrism<PP.Source, PP.Target, CP.SourceValue, CP.TargetValue>(
             tryGet: { source in parent.tryGet(from: source).flatMap(child.tryGet(from:)) },
             reset: { value in parent.reset(to: child.reset(to: value)) },
@@ -83,8 +89,11 @@ public func compose<PP: PrismType, CP: PrismType>(prism parent: PP, with child: 
 }
 
 public func compose<PP: PrismType, CP: PrismType>(prism parent: PP, with child: CP)
-    -> AnyPrism<PP.Source, PP.Target, CP.SourceValue, CP.TargetValue>
-    where PP.SourceValue == CP.Source, PP.TargetValue == CP.Target, PP.Source == PP.Target, CP.SourceValue == CP.TargetValue {
+    -> AnyPrism<PP.Source, PP.Target, CP.SourceValue, CP.TargetValue> where
+    PP.SourceValue == CP.Source,
+    PP.TargetValue == CP.Target,
+    PP.Source == PP.Target,
+    CP.SourceValue == CP.TargetValue {
         let composed: AnyPrism = compose(prism: parent, with: child)
         return Prism<PP.Source, CP.SourceValue>(tryGet: composed._tryGet, reset: composed._reset)
 }

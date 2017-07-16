@@ -2,7 +2,8 @@ import Foundation
 
 public protocol Resettable {}
 extension Resettable {
-    public func resetting<R: ResetterType>(over resetter: R, to targetValue: R.TargetValue) -> R.Target {
+    public func resetting<R: ResetterType>(over resetter: R,
+                                           to targetValue: R.TargetValue) -> R.Target {
         return resetter.reset(to: targetValue)
     }
 

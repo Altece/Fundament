@@ -39,7 +39,9 @@ public class AnyReducer<S, A>: ReducerType {
             }
     }
 
-    public func reduce<T>(from source: Source, to initialValue: T, combine: (T, SourceValue) -> T) -> T {
+    public func reduce<T>(from source: Source,
+                          to initialValue: T,
+                          combine: (T, SourceValue) -> T) -> T {
         return _reduce(source, initialValue) { combine($0 as! T, $1) } as! T
     }
 }
