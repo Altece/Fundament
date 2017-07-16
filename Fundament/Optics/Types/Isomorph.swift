@@ -2,15 +2,15 @@ import Foundation
 
 public typealias IsomorphType = LensType & PrismType
 
-extension MakerType where Self: IsomorphType, Self.Source == Self.Target {
-    public func map(from source: Source, over transform: (Aspect) -> Detail) -> Target {
+extension ResetType where Self: IsomorphType, Self.Source == Self.Target {
+    public func map(from source: Source, over transform: (SourceValue) -> TargetValue) -> Target {
         return set(from: source, to: transform(get(from: source)))
     }
 }
 
 extension SetterType where Self: IsomorphType {
-    public func set(from source: Source, to detail: Detail) -> Target {
-        return make(from: detail)
+    public func set(from source: Source, to targetValue: TargetValue) -> Target {
+        return reset(to: targetValue)
     }
 }
 
@@ -19,28 +19,28 @@ extension SetterType where Self: IsomorphType {
 public class AnyIsomorph<S, T, A, B>: IsomorphType {
     public typealias Source = S
     public typealias Target = T
-    public typealias Aspect = A
-    public typealias Detail = B
+    public typealias SourceValue = A
+    public typealias TargetValue = B
 
-    private let _get: (Source) -> Aspect
-    private let _make: (Detail) -> Target
+    private let _get: (Source) -> SourceValue
+    private let _make: (TargetValue) -> Target
 
-    public init(get: @escaping (Source) -> Aspect, make: @escaping (Detail) -> Target) {
+    public init(get: @escaping (Source) -> SourceValue, make: @escaping (TargetValue) -> Target) {
         _get = get
         _make = make
     }
 
     public convenience init<I: IsomorphType>(_ isomorph: I)
-        where Source == I.Source, Target == I.Target, Aspect == I.Aspect, Detail == I.Detail {
-            self.init(get: isomorph.get(from:), make: isomorph.make(from:))
+        where Source == I.Source, Target == I.Target, SourceValue == I.SourceValue, TargetValue == I.TargetValue {
+            self.init(get: isomorph.get(from:), make: isomorph.reset(to:))
     }
 
-    public func get(from source: Source) -> Aspect {
+    public func get(from source: Source) -> SourceValue {
         return _get(source)
     }
 
-    public func make(from detail: Detail) -> Target {
-        return _make(detail)
+    public func reset(to targetValue: TargetValue) -> Target {
+        return _make(targetValue)
     }
 }
 

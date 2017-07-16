@@ -3,9 +3,9 @@ import Foundation
 public protocol SetterType {
     associatedtype Source
     associatedtype Target
-    associatedtype Detail
+    associatedtype TargetValue
 
-    func set(from source: Source, to detail: Detail) -> Target
+    func set(from source: Source, to targetValue: TargetValue) -> Target
 }
 
 // MARK: - AnySetter
@@ -13,21 +13,21 @@ public protocol SetterType {
 public class AnySetter<S, T, B>: SetterType {
     public typealias Source = S
     public typealias Target = T
-    public typealias Detail = B
+    public typealias TargetValue = B
 
-    private let _set: (Source, Detail) -> Target
+    private let _set: (Source, TargetValue) -> Target
 
-    public init(_ set: @escaping (Source, Detail) -> Target) {
+    public init(_ set: @escaping (Source, TargetValue) -> Target) {
         _set = set
     }
 
     public convenience init<S: SetterType>(_ setter: S)
-        where Source == S.Source, Target == S.Target, Detail == S.Detail {
+        where Source == S.Source, Target == S.Target, TargetValue == S.TargetValue {
             self.init(setter.set(from:to:))
     }
 
-    public func set(from source: Source, to detail: Detail) -> Target {
-        return _set(source, detail)
+    public func set(from source: Source, to targetValue: TargetValue) -> Target {
+        return _set(source, targetValue)
     }
 }
 

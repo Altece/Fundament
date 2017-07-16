@@ -2,20 +2,20 @@ import Foundation
 
 public protocol ReducerType {
     associatedtype Source
-    associatedtype Aspect
+    associatedtype SourceValue
 
-    func reduce<T>(from source: Source, to initialValue: T, combine: (T, Aspect) -> T) -> T
+    func reduce<T>(from source: Source, to initialValue: T, combine: (T, SourceValue) -> T) -> T
 
-    func tryGet(from source: Source) -> Aspect?
-    func survey(from source: Source) -> Either<Source, Aspect>
+    func tryGet(from source: Source) -> SourceValue?
+    func survey(from source: Source) -> Either<Source, SourceValue>
 }
 
 extension ReducerType {
-    public func tryGet(from source: Source) -> Aspect? {
-        return self.reduce(from: source, to: nil as Aspect?) { $0.map { $0 } ?? $1 }
+    public func tryGet(from source: Source) -> SourceValue? {
+        return self.reduce(from: source, to: nil as SourceValue?) { $0.map { $0 } ?? $1 }
     }
 
-    public func survey(from source: Source) -> Either<Source, Aspect> {
+    public func survey(from source: Source) -> Either<Source, SourceValue> {
         return tryGet(from: source).map(Either.right) ?? .left(source)
     }
 }
@@ -24,22 +24,22 @@ extension ReducerType {
 
 public class AnyReducer<S, A>: ReducerType {
     public typealias Source = S
-    public typealias Aspect = A
+    public typealias SourceValue = A
 
-    private let _reduce: (Source, Any, (Any, Aspect) -> Any) -> Any
+    private let _reduce: (Source, Any, (Any, SourceValue) -> Any) -> Any
 
-    public init(_ reduce: @escaping (Source, Any, (Any, Aspect) -> Any) -> Any) {
+    public init(_ reduce: @escaping (Source, Any, (Any, SourceValue) -> Any) -> Any) {
         _reduce = reduce
     }
 
     public convenience init<R: ReducerType>(_ reducer: R)
-        where Source == R.Source, Aspect == R.Aspect {
+        where Source == R.Source, SourceValue == R.SourceValue {
             self.init() { whole, initial, combine in
                 reducer.reduce(from: whole, to: initial, combine: combine)
             }
     }
 
-    public func reduce<T>(from source: Source, to initialValue: T, combine: (T, Aspect) -> T) -> T {
+    public func reduce<T>(from source: Source, to initialValue: T, combine: (T, SourceValue) -> T) -> T {
         return _reduce(source, initialValue) { combine($0 as! T, $1) } as! T
     }
 }

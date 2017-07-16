@@ -3,10 +3,10 @@ import Foundation
 public protocol MapperType {
     associatedtype Source
     associatedtype Target
-    associatedtype Aspect
-    associatedtype Detail
+    associatedtype SourceValue
+    associatedtype TargetValue
 
-    func map(from source: Source, over transform: (Aspect) -> Detail) -> Target
+    func map(from source: Source, over transform: (SourceValue) -> TargetValue) -> Target
 }
 
 // MARK: - AnyMapper
@@ -14,21 +14,21 @@ public protocol MapperType {
 public class AnyMapper<S, T, A, B> {
     public typealias Source = S
     public typealias Target = T
-    public typealias Aspect = A
-    public typealias Detail = B
+    public typealias SourceValue = A
+    public typealias TargetValue = B
     
-    private let _map: (Source, (Aspect) -> Detail) -> Target
+    private let _map: (Source, (SourceValue) -> TargetValue) -> Target
 
-    public init(_ map: @escaping (Source, (Aspect) -> Detail) -> Target) {
+    public init(_ map: @escaping (Source, (SourceValue) -> TargetValue) -> Target) {
         _map = map
     }
 
     public convenience init<M: MapperType>(_ mapper: M)
-        where Source == M.Source, Target == M.Target, Aspect == M.Aspect, Detail == M.Detail {
+        where Source == M.Source, Target == M.Target, SourceValue == M.SourceValue, TargetValue == M.TargetValue {
             self.init(mapper.map(from:over:))
     }
 
-    public func map(from source: Source, over transform: (Aspect) -> Detail) -> Target {
+    public func map(from source: Source, over transform: (SourceValue) -> TargetValue) -> Target {
         return _map(source, transform)
     }
 }
