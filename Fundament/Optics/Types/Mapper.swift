@@ -1,12 +1,15 @@
 import Foundation
 
-public protocol MapperType {
-    associatedtype Source
-    associatedtype Target
+public protocol MapperType: SetterType {
     associatedtype SourceValue
-    associatedtype TargetValue
 
     func map(from source: Source, over transform: (SourceValue) -> TargetValue) -> Target
+}
+
+extension MapperType {
+    public func set(from source: Source, to targetValue: TargetValue) -> Target {
+        return map(from: source) { _ in targetValue }
+    }
 }
 
 // MARK: - AnyMapper

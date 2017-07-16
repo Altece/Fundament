@@ -16,8 +16,8 @@ public class AnyLens<S, T, A, B>: LensType {
     public typealias SourceValue = A
     public typealias TargetValue = B
 
-    private let _get: (Source) -> SourceValue
-    private let _set: (Source, TargetValue) -> Target
+    fileprivate let _get: (Source) -> SourceValue
+    fileprivate let _set: (Source, TargetValue) -> Target
 
     public init(get: @escaping (Source) -> SourceValue, set: @escaping (Source, TargetValue) -> Target) {
         _get = get
@@ -39,3 +39,24 @@ public class AnyLens<S, T, A, B>: LensType {
 }
 
 public class Lens<Whole, Part>: AnyLens<Whole, Whole, Part, Part> {}
+
+// MARK: - Composition
+
+public func compose<PL: LensType, CL: LensType>(lens parent: PL, with child: CL)
+    -> AnyLens<PL.Source, PL.Target, CL.SourceValue, CL.TargetValue>
+    where PL.SourceValue == CL.Source, PL.TargetValue == CL.Target {
+        return AnyLens<PL.Source, PL.Target, CL.SourceValue, CL.TargetValue>(
+            get: { source in child.get(from: parent.get(from: source)) },
+            set: { source, value in
+                parent.set(from: source,
+                           to: child.set(from: parent.get(from: source),
+                                         to: value))
+        })
+}
+
+public func compose<PL: LensType, CL: LensType>(lens parent: PL, with child: CL)
+    -> Lens<PL.Source, CL.SourceValue>
+    where PL.SourceValue == CL.Source, PL.TargetValue == CL.Target, PL.Source == PL.Target, CL.SourceValue == CL.TargetValue {
+        let composed: AnyLens = compose(lens: parent, with: child)
+        return Lens<PL.Source, CL.SourceValue>(get: composed._get, set: composed._set)
+}

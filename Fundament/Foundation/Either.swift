@@ -55,13 +55,13 @@ extension Either: Prismable {
         return Prism(tryGet: {
             guard case .left(let value) = $0 else { return nil }
             return value
-        }, make: { .left($0) })
+        }, reset: { .left($0) })
     }
 
     public static var Right: Prism<Either, Right> {
         return Prism(tryGet: {
             guard case .right(let value) = $0 else { return nil }
             return value
-        }, make: { .right($0) })
+        }, reset: { .right($0) })
     }
 }

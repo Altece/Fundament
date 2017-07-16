@@ -10,8 +10,8 @@ public class AnyTraversal<S, T, A, B>: TraversalType {
     public typealias SourceValue = A
     public typealias TargetValue = B
 
-    private let _map: (Source, (SourceValue) -> TargetValue) -> Target
-    private let _reduce: (Source, Any, (Any, SourceValue) -> Any) -> Any
+    fileprivate let _map: (Source, (SourceValue) -> TargetValue) -> Target
+    fileprivate let _reduce: (Source, Any, (Any, SourceValue) -> Any) -> Any
 
     public init(map: @escaping (Source, (SourceValue) -> TargetValue) -> Target,
                 reduce: @escaping (Source, Any, (Any, SourceValue) -> Any) -> Any) {
@@ -36,3 +36,27 @@ public class AnyTraversal<S, T, A, B>: TraversalType {
 }
 
 public class Traversal<Whole, Part>: AnyTraversal<Whole, Whole, Part, Part> {}
+
+// MARK: - Composition
+
+public func compose<PT: TraversalType, CT: TraversalType>(traversal parent: PT, with child: CT)
+    -> AnyTraversal<PT.Source, PT.Target, CT.SourceValue, CT.TargetValue>
+    where PT.SourceValue == CT.Source, PT.TargetValue == CT.Target {
+        return AnyTraversal<PT.Source, PT.Target, CT.SourceValue, CT.TargetValue>(
+            map: { source, transform in
+                parent.map(from: source) { value in
+                    child.map(from: value, over: transform)
+                }
+        }, reduce: { source, initial, combine in
+            parent.reduce(from: source, to: initial) { combined, value in
+                child.reduce(from: value, to: combined, combine: combine)
+            }
+        })
+}
+
+public func compose<PT: TraversalType, CT: TraversalType>(traversal parent: PT, with child: CT)
+    -> Traversal<PT.Source, CT.SourceValue>
+    where PT.SourceValue == CT.Source, PT.TargetValue == CT.Target, PT.Source == PT.Target, CT.SourceValue == CT.TargetValue {
+        let composed: AnyTraversal = compose(traversal: parent, with: child)
+        return Traversal<PT.Source, CT.SourceValue>(map: composed._map, reduce: composed._reduce)
+}

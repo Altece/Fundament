@@ -12,13 +12,13 @@ extension Optional {
 
 extension Optional: Prismable {
     public static var Some: Prism<Optional, Wrapped> {
-        return Prism(tryGet: { $0 }, make: { $0 })
+        return Prism(tryGet: { $0 }, reset: { $0 })
     }
 
     public static var None: Prism<Optional, ()> {
         return Prism(tryGet: {
             guard case nil = $0 else { return nil }
             return ()
-        }, make: { _ in nil })
+        }, reset: { _ in nil })
     }
 }
